@@ -1,0 +1,44 @@
+﻿@model LeaderboardCoreWebApp.Models.Leaderboard
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+	<a asp-action="Index">Refresh</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayFor(model => model.Name)
+			</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>
+				Competitor
+			</th>
+			<th>
+				Score
+			</th>
+			<th></th>
+		</tr>
+
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Competitors)
+		{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Score)
+			</td>
+		</tr>
+		}
+	</tbody>
+</table>
